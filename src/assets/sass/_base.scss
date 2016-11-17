@@ -1,0 +1,197 @@
+@import "_reset";
+body {
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    background-color: $color-white;
+    transform: none;
+    color: $color-black;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -o-font-smoothing: antialiased;
+    @media #{$medium-up}{
+         width: 100%;
+    }
+    &.map-visible // &.prevent-scroll
+    {
+        overflow: hidden;
+        position: fixed;
+    }
+}
+
+a {
+    color: $color-black;
+    font-weight: 400;
+    &:hover,
+    &:focus {
+        text-decoration: none;
+        color: $color-black;
+       /* font-weight: bold;*/
+    }
+
+    &:active{
+        outline: none !important;
+    }
+
+    &.cta {
+        @include cta-text;
+        @include font-size(12px, 25px);
+        font-weight: 400;
+    }
+    
+}
+
+
+
+p {
+    @include font-size(16px, 25px);
+    margin-bottom: 20px;
+    font-weight: 300;
+    color: $color-black;
+    &:last-child {
+        margin-bottom: 0;
+    }
+    &.intro {
+        @include font-size(18px, 28px);
+        @media #{$small-up} {
+            @include font-size(24px, 38px);
+        }
+    }
+}
+
+.right {
+    float: right;
+}
+
+.left {
+    float: left;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-bottom: 20px;
+    font-weight: 300;
+}
+
+h2 {
+    @include font-size(36px, 46px);
+    // @include font-size(26px,38px);
+    @media #{$medium-up} {
+        @include font-size(36px, 46px);
+    }
+}
+
+h3 {
+    @include font-size(32px, 40px);
+}
+
+ul {
+    @include font-size(16px, 25px);
+    margin-bottom: 28px;
+    li {
+        margin-top: 15px;
+        &:first-child {
+            margin-top: 0;
+        }
+        small {
+            font-size: 0.8em;
+        }
+    }
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.content-wrapper {
+    overflow-x: hidden;
+    /* This is necssary to prevent horizontal scrolling for elements that are horizontally offset */
+    padding-top: 68px;
+    @media #{$medium-up} {
+        padding-top: 0;
+    }
+    .sticky-header & {
+        @media #{$medium-up} {
+            padding-top: 130px;
+        }
+    }
+    .prevent-scroll-mob & {
+        overflow: hidden;
+    }
+}
+
+.container {
+    width: 100% !important;
+    padding-right: 15px;
+    padding-left: 15px;
+    @media #{$small-up} {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    @media #{$large-up} {
+        padding-right: 15px;
+        padding-left: 15px;
+        max-width: 1200px;
+    }
+}
+
+
+/*Overrriding bootstrap classes*/
+.content-wrapper{
+    .container {
+      padding-right: 15px;
+      padding-left: 15px;
+      margin-right: auto;
+      margin-left: auto;
+      margin-top: 30px!important;
+      margin-bottom: 30px!important;
+        .container{
+            margin-top: 0!important;
+            margin-bottom: 0!important;
+            padding-left:0!important;
+            padding-right:0!important;
+        }
+    }
+    @media (min-width: 768px) {
+      .container {
+        width: 750px;
+        margin-top: 45px!important;
+        margin-bottom: 45px!important;
+      }
+    }
+    @media (min-width: 992px) {
+      .container {
+        width: 970px;
+        margin-top: 45px!important;
+        margin-bottom: 45px!important;
+      }
+    }
+    @media (min-width: 1200px) {
+      .container {
+        width: 1170px;
+        margin-top: 45px!important;
+        margin-bottom: 45px!important;
+      }
+    }
+}
+
+.sr-only{
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+}
+
+.col-8{
+    width: 100%;
+    @media #{$medium-up} {
+        width: 66.6667%;
+    }
+}

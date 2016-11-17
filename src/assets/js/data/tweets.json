@@ -1,0 +1,28 @@
+{
+  "tweetData": [
+    {
+      "fullName": "assets/img/Tablet_Medium_Tile.jpg",
+      "username": "3 March 2016",
+      "tweet": " dolor sit amet, consectetur adipiscing elit.  dolor sit amet, consectetur adipiscing elit.",
+      "time": "2m",
+      "reTweets": 20,
+      "favorites": true
+    },
+    {
+      "fullName": "assets/img/Tablet_Medium_Tile.jpg",
+      "username": "3 March 2016",
+      "tweet": " dolor sit amet, consectetur adipiscing elit.  dolor sit amet, consectetur adipiscing elit.",
+      "time": "2m",
+      "reTweets": 20,
+      "favorites": true
+    },
+    {
+      "fullName": "assets/img/Tablet_Medium_Tile.jpg",
+      "username": "3 March 2016",
+      "tweet": " dolor sit amet, consectetur adipiscing elit.  dolor sit amet, consectetur adipiscing elit.",
+      "time": "2m",
+      "reTweets": 20,
+      "favorites": true
+    }
+  ]
+}

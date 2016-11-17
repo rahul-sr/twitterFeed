@@ -1,0 +1,113 @@
+.site-header {
+    height: 80px;
+    max-width: 1200px;
+    .primary-nav {
+        background: $color-white;
+        position: relative;
+        max-height: 50px;
+        padding: 0 15px;
+        @include unstyled-list;
+        text-align: center;
+        width: 100%;
+        @media #{$small-up} {
+            padding: 0 30px;
+        }
+        @media #{$medium-up} {
+            padding: 0 30px;
+            max-height: 50px;
+            border-bottom: 0 !important;
+        }
+        .main-nav {
+            float: left;
+            li {
+                float: left;
+                a {
+                    display: block;
+                    padding: 5px;
+                    height: 20px;
+                    width: 20px;
+                    text-align: center;
+                    border-radius: 50%;
+                    display: table-cell;
+                    vertical-align: middle;
+                    @include cta-text;
+                    font-size: 14px;
+                    font-weight: 400;
+                    color: $color-black;
+                    border: 1px solid $color-grey;
+                    text-shadow: 0 1px 1px 0 #ffffff;
+                    .fa{
+                    	 line-height: 20px;
+                    }
+                    &:hover,
+                    &:focus {
+                        font-weight: 500;
+                        color: $color-black;
+                    }
+                    &:focus a {
+                        color: $color-primary;
+                    }
+                }
+            }
+        }
+        .main-nav {
+            margin:12px 0 0 43px;
+            li {
+                margin: 10px 20px;
+                &:first-child {
+                    margin-left: 0;
+                }
+            }
+            a {
+                position: relative;
+                &:hover {
+                    &:after {
+                        width: calc(100%);
+                    }
+                }
+            }
+        }
+    }
+    .form-search {
+      float: right;
+      margin-top: 20px;
+      display: block;
+      box-sizing: border-box;
+      height: 32px;
+      padding: 5px 27px 6px 12px;
+      font-size: 12px;
+      line-height: 1;
+      color: #292f33;
+      border: 1px solid #e1e8ed;
+      border-radius: 21px;
+      input{
+        border: none;
+        outline: 0;
+        line-height: 20px;
+      }
+      button{
+        background-color: transparent;
+        border: none;
+      }
+    }
+}
+
+.content-wrapper {
+    background-color: #f2eee8;
+}
+
+.logo-center {
+    display: inline-block;
+    text-align: center;
+    width: 30%;
+    padding: 30px;
+    padding: 23px 0px 0 60px;
+}
+
+i.fa.fa-twitter {
+    font-size: 30px;
+    color: $color-primary;
+}
+
+
+

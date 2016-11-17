@@ -1,0 +1,70 @@
+.tabs-nav {
+    background-color: $color-white;
+    clear: both;
+    margin-bottom: 20px;
+    text-align: center;
+    @media #{$small-up} {
+        margin-bottom: 0px;
+    }
+ 
+    .tabs-nav-list {
+        display: inline-block;
+        white-space: nowrap;
+        @media #{$x-small} {
+            width: 100%;
+            text-align: center;
+        }
+        li {
+            font-size: 14px;
+            letter-spacing: 2px;
+            line-height: 18px;
+            display: inline-block;
+            width: 24%;
+            text-transform: uppercase;
+            a {
+                width: 100%;
+                color: $color-black;
+                text-decoration: none;
+                display: inline-block;
+                position: relative;
+                height: 50px;
+                padding-bottom: 13px;
+            }
+            a.selected {
+                color: $color-black;
+            }
+            a:hover {
+                color: $color-black;
+                border-bottom: 4px solid $color-primary;
+                padding-bottom: 13px;
+                font-weight: normal;
+            }
+        }
+        li > a.selected {
+            border-bottom: 4px solid $color-primary;
+            padding-bottom: 13px;
+        }
+        li a:active {
+            a {
+                color: $color-black;
+            }
+        }
+        li.selected {
+            border-bottom: 4px solid $color-primary;
+            a {
+                color: $color-black;
+            }
+        }
+        .count{
+           position: absolute;
+           bottom: 22px;
+           left: 42%;
+           font-weight: 700;
+        }
+        .label{
+            color: $color-grey;
+        }
+
+    }
+}
+

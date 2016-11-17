@@ -1,0 +1,15 @@
+/* Media queries */
+$x-small: "all and (min-width: 480px)";
+$l-small: "all  and (max-width:767px) and (orientation: landscape)";
+$small-up: "all and (min-width: 768px)"; 
+$medium-up: "all and (min-width: 992px)";
+$large-up: "all and (min-width: 1200px)";
+$x-large-up: "all and (min-width: 1600px)";
+
+/* Colours */
+$color-white: #FFFFFF;
+$color-black: #000000;
+$color-primary: #80a8cc;
+$color-grey: #d2cdbf;
+$color-slate-grey:#605e58;
+

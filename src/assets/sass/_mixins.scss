@@ -1,0 +1,279 @@
+//clearfix
+%clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+ -moz-transition: $args;
+ -ms-transition: $args;
+ -o-transition: $args;
+ transition: $args;
+}
+
+@mixin transition-delay($args...) {
+  -webkit-transition-delay: $args;
+  -moz-transition-delay: $args;
+  -ms-transition-delay: $args;
+  -o-transition-delay: $args;
+  transition-delay: $args;
+}
+
+@mixin keyframes($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+    @-moz-keyframes #{$animation-name} {
+        @content;
+    }
+    @-ms-keyframes #{$animation-name} {
+        @content;
+    }
+    @-o-keyframes #{$animation-name} {
+        @content;
+    }
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};
+}
+
+@mixin border-radius($args...) {
+  -moz-border-radius: $args;
+  -webkit-border-radius: $args;
+  border-radius: $args;
+}
+@mixin font-size($font-size,$line-height){
+	font-size: $font-size;
+	line-height: $line-height;
+}
+
+@mixin cta-text{
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	color: $color-black;
+	line-height: 18px;
+
+	&:focus{
+		text-decoration: none;
+	}
+}
+
+@mixin unstyled-list{
+	margin-bottom: 0;
+
+	li{
+		margin-top: 0;
+	}
+}
+
+@mixin button{
+	@include cta-text;
+	@include smooth-hover;
+	padding: 22px 30px;
+	line-height: 16px;
+	display: inline-block;
+	font-size: 12px;
+	text-decoration: none;
+	border-radius: 0;
+	margin-right: 20px;
+	font-weight: 400;
+	white-space: nowrap;
+	text-align: center;
+	min-width: 200px;
+
+	@keyframes flyup {
+	    0%   {opacity: 1; top: 0px;}
+	    40%  {opacity: 0; top: -20px}
+	    51%  {top: 50px;}
+	    65%  {opacity: 0;}
+	    100% {top: 0px; opacity: 1;}
+	}
+
+	&:hover{
+		span{
+			animation-name: flyup;
+			-moz-animation: flyup;
+		    animation-duration: 0.4s;
+		    -moz-animation-duration: 0.4s;
+		    animation-iteration-count: 1;
+		    -moz-animation-iteration-count: 1;
+		}
+	}
+
+	&:last-child{
+		margin-right: 0;
+	}
+
+	&.primary{
+		background-color: $color-black;
+		color: $color-white;
+		position: relative;
+
+		&.transparent{
+			background-color: transparent;
+			border: 1px solid $color-black;
+			color: $color-black;
+			cursor: pointer;
+		}
+	}
+
+	&.secondary{
+		border: 1px solid $color-black;
+		overflow: hidden;
+
+		&.transparent{
+			border-color: $color-white;
+			color: $color-white;
+			cursor: pointer;
+		}
+	}
+
+	&.wide{
+		width: 100%;
+	}
+
+	.icn:before{
+		font-size: 10px;
+		margin-right: 20px;
+	}
+
+	span{
+		position: relative;
+	}
+}
+
+@mixin smooth-hover{
+	transition: opacity,color, $trans ease-in-out;
+}
+
+@mixin person{
+	position: relative;
+	padding: 5px 0 5px 66px;
+	min-height: 50px;
+	@include font-size(16px,20px);
+
+	a{
+		display: block;
+		color: $color-black;
+	}
+
+	img{
+		width: 48px;
+		height: 58px;
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
+
+	small{
+		display: block;
+		clear: left;
+		@include font-size(14px,20px);
+		color: $color-black;
+	}
+}
+
+@mixin bleed-box{
+	position: relative;
+	padding: 20px;
+	margin-bottom: 0;
+	margin-top: 0;
+
+	&:after{
+		content: '';
+		background: $color-white;
+		top: 62px;
+		bottom: -1px;
+		left: -100vw;
+		right: -100vw;
+		position: absolute;
+		border: 1px solid $color-black;
+		z-index: -1;
+		display: block;
+
+		@media #{$medium-up}{
+			top: 100px;
+		}
+	}
+
+	@media #{$small-up}{
+		padding: 40px 60px;
+
+		&.bleed-to-left{
+			&:after{
+				left: -100vw;
+				right: 0;
+			}
+		}
+
+		&.bleed-to-right{
+			&:after{
+				right: -100vw;
+				left: 0;
+			}
+		}
+	}
+
+	@media #{$medium-up}{
+		padding: 60px;
+	}
+
+	&.full-bleed{
+		padding-top: 0;
+		margin:0 0 30px 0;
+		@media #{$small-up}{
+				margin:0;
+		}
+
+		&:after{
+			right: -100vw;
+			left: -100vw;
+
+			@media #{$medium-up}{
+				top: 90px;
+			}
+		}
+	}
+
+	.heading{
+		padding: 12px 20px;
+		margin-bottom: 20px;
+		@include font-size(28px,38px);
+		color: $color-white;
+		display: inline-block;
+		z-index: 1;
+		position: relative;
+		left: 0;
+		font-weight: 300;
+
+		@media #{$small-up}{
+			display: inline-block;
+			margin-right: auto;
+			margin-left: -60px;
+			margin-bottom: 50px;
+			padding-left: 60px !important;
+			padding-right: 60px;
+			@include font-size(32px,40px);
+		}
+
+		@media #{$medium-up}{
+			margin-bottom: 60px;
+			padding: 25px 56px;
+			@include font-size(32px,40px);
+		}
+	}
+
+}
+
