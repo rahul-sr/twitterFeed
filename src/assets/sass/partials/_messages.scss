@@ -1,0 +1,96 @@
+.messages{
+    /*display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: center;*/
+    margin: auto;
+    width: 75%;
+    h3{
+        font-weight: bold;
+        margin-top: 20px;
+    }
+    .fill{
+        height:200px;
+        width: 100%;
+        display: inline-block;
+        box-shadow: 2px 2px 2px #eee;
+    }
+    .tuple{
+        box-shadow: 5px 5px 5px #ddd;
+        float: left;
+        display: inline-block;
+        text-align:center;
+        min-height: 410px;
+        padding-bottom: 75px;
+        position: relative;
+        background-color: #fff;
+        &:hover{
+            box-shadow: 5px 5px 5px #eee;
+        }
+    }
+    .error{
+            /*flex: 1;
+            margin:50px;*/
+            @media #{$medium-up} {
+                 margin-right: 8.33%;
+                margin-left: 5%;
+             }
+           
+            .fill{
+                background-color: rgb(239,76,97);
+            }
+        }
+    .success{
+        .fill{
+                background-color: rgb(22,171,111);
+            }
+    }
+    .btn{
+        text-decoration: none;
+        border: 1px solid rgb(22,171,111);
+        border-radius: 20px;
+        padding: 10px 13%;
+        margin-top: 20px;
+        position: absolute;
+        bottom: 40px;
+        left: 25%;
+        min-width: 74px;
+        @media #{$small-up} {
+            left: 33%;
+        }
+        @media #{$medium-up} {
+            left: 25%;
+        }
+        &.btn-primary{
+            color: rgb(22,171,111);
+            &:hover{
+               color:rgba(22,171,111,0.8);
+            }
+        }
+        &.btn-secondary{
+            background-color: rgb(22,171,111);
+            color: #fff;
+        }
+        &:hover{
+           box-shadow: 1px 1px 1px #eee;
+           opacity: 0.9; 
+        }
+    }
+    p{
+        color: rgb(171,171,171);
+        padding:0 20px;
+    }
+    margin-bottom:50px;
+}
+
+.col-4{
+     width: 100%;
+     margin-top: 30px;
+     /*@media #{$small-up} {
+        width: 50%;
+     }*/
+     @media #{$medium-up} {
+        width: 33.33%;
+        margin-top: 0;
+     }
+}
